@@ -1,4 +1,5 @@
 ---
+#single pod with multiple container's
 apiVersion: v1
 kind: Pod
 metadata:
@@ -10,14 +11,14 @@ metadata:
     version: v1
 spec:
   containers:
-    - name: web
-      image: httpd
-      ports:
-        - containerPort: 80
-    - name: db
-      image: mysql
-      ports:
-        - containerPort: 3306
-      env:
-        - name: MYSQL_ROOT_PASSWORD
-          value: admin
+  - name: web
+    image: httpd
+    ports:
+    - containerPort: 80
+  - name: db
+    image: mysql
+    ports:
+    - containerPort: 3306
+    env:
+    - name: MYSQL_ROOT_PASSWORD
+      value: admin
